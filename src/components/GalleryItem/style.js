@@ -21,6 +21,7 @@ export const Container = styled.div`
   }
   &:hover .txt {
     color: #fff;
+    font-weight: bold;
   }
   &:hover .num {
     opacity: 1;
@@ -71,6 +72,7 @@ export const Text = styled.h2`
   font-size: 42px;
   transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   line-height: 120%;
+  font-weight: 550;
 `;
 
 export const Img = styled.img`
