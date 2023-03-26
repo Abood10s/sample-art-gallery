@@ -86,6 +86,9 @@ export const Grid = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 export const Music = styled.button`
   display: flex;
