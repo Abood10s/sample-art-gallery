@@ -1,6 +1,5 @@
 import GalleryItem from "./components/GalleryItem";
 import { Grid, Music } from "./components/GalleryItem/style";
-import audioUrl from "./audio/themesong.mp3";
 import { MdMusicOff } from "react-icons/md";
 import { MdMusicNote } from "react-icons/md";
 import { useEffect, useState } from "react";
