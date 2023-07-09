@@ -92,7 +92,7 @@ export const Grid = styled.div`
 `;
 export const CaroContainer = styled.div`
   .carouselCont {
-    padding: 2rem;
+    padding: 1rem 0.5rem;
   }
   background-color: #6f5b3e;
 `;

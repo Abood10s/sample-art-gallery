@@ -1,3 +1,8 @@
+import React from "react";
+import { CaroContainer } from "../GalleryItem/style";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { carouselImages } from "../../Mock";
 export const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -17,3 +22,37 @@ export const responsive = {
     items: 1,
   },
 };
+const ArtCarousel = () => {
+  return (
+    <CaroContainer>
+      <Carousel
+        className="carouselCont"
+        responsive={responsive}
+        swipeable={true}
+        showDots={true}
+        arrows={true}
+        focusOnSelect={true}
+        minimumTouchDrag={30}
+      >
+        {carouselImages.map((img, index) => {
+          return (
+            <img
+              src={img}
+              key={img}
+              alt="image"
+              style={{
+                display: "block",
+                margin: "0.5rem auto",
+                maxHeight: "400px",
+                objectFit: "cover",
+                width: "auto",
+              }}
+            />
+          );
+        })}
+      </Carousel>
+    </CaroContainer>
+  );
+};
+
+export default ArtCarousel;
