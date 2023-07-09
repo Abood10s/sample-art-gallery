@@ -90,25 +90,9 @@ export const Grid = styled.div`
     flex-wrap: wrap;
   }
 `;
-export const Music = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
-  position: fixed;
-  bottom: 4%;
-  right: 2%;
-  z-index: 989;
-  font-size: 30px;
-  cursor: pointer;
-  color: red;
-  text-align: center;
-  background-color: #000;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-  :hover {
-    transform: scale(1.2);
+export const CaroContainer = styled.div`
+  .carouselCont {
+    padding: 2rem;
   }
+  background-color: #6f5b3e;
 `;

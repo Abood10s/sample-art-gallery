@@ -1,37 +1,50 @@
 import GalleryItem from "./components/GalleryItem";
-import { Grid, Music } from "./components/GalleryItem/style";
-import { MdMusicOff } from "react-icons/md";
-import { MdMusicNote } from "react-icons/md";
-import { useEffect, useState } from "react";
-import { images } from "./Mock";
-import { ThemeProvider } from "styled-components";
+import { CaroContainer, Grid } from "./components/GalleryItem/style";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
+import { carouselImages, images } from "./Mock";
+import { ThemeProvider } from "styled-components";
+import { responsive } from "./components/carousel";
 function App() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const theme = {
     main: "mediumseagreen",
   };
-  useEffect(() => {
-    setIsPlaying(true);
-  }, []);
+
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Grid>
-          <Music onClick={() => setIsPlaying(!isPlaying)}>
-            {isPlaying ? <MdMusicOff /> : <MdMusicNote />}
-          </Music>
-          {/* <Sound
-            url={audioUrl}
-            playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-            loop={true}
-            volume={45}
-            // playFromPosition={300 /* in milliseconds />*/}
-
           {images.map((img, index) => {
             return <GalleryItem src={img} key={img} num={index + 1} />;
           })}
         </Grid>
+        <CaroContainer>
+          <Carousel
+            className="carouselCont"
+            responsive={responsive}
+            swipeable={true}
+            showDots={true}
+            arrows={true}
+            focusOnSelect={true}
+            minimumTouchDrag={30}
+          >
+            {carouselImages.map((img, index) => {
+              return (
+                <img
+                  src={img}
+                  key={img}
+                  style={{
+                    display: "block",
+                    margin: "0.5rem auto",
+                    maxHeight: "450px",
+                    objectFit: "cover",
+                  }}
+                />
+              );
+            })}
+          </Carousel>
+        </CaroContainer>
       </ThemeProvider>
     </div>
   );
